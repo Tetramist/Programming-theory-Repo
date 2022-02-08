@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 [DefaultExecutionOrder(1000)]
@@ -17,7 +18,7 @@ public class UIHandler : MonoBehaviour
     {
         if (GameManager.Instance.savedShape != null)
         {
-            playerName = GameManager.Instance.savedName;
+            playerName = GameManager.Instance.SavedName;
             shapeName = GameManager.Instance.savedShape.name;
         }
         else
@@ -27,5 +28,10 @@ public class UIHandler : MonoBehaviour
         }
 
         chosenShapeText.text = "Hello, " + playerName + ".\nYou have chosen: " + shapeName;
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

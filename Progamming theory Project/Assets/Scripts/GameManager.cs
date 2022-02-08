@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public GameObject savedShape;
     public GameObject defaultShape;
 
-    public string savedName { get; private set; }
+    public string SavedName { get; set; }
 
     // Start is called before the first frame update
     void Awake()
